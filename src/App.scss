@@ -1,0 +1,91 @@
+body{
+  h3{
+    font-size: 1.2rem;
+  }
+  .expense-tracker{
+    border: 1px solid #ddd;
+    .header{
+      text-align: center;
+      color:#fff;
+      background-color:#f08484;
+      padding: 15px 0px;
+    }
+    .income-expenses{
+      display: flex;
+      flex-wrap: wrap;
+      padding: 10px 0px;
+      div{
+        text-align:  center;
+        &:first-child{
+          width:50%;
+        }
+        &:last-child{
+          width:50%;
+        }
+      }
+    }
+    .balance{
+      background-color: #ddd;
+      margin-top: 15px;
+      padding: 10px 5px;
+       text-align: center;
+      h3{
+        margin:0;
+      }
+      p{
+        margin: 0;
+      }
+    }
+    .history{
+      ul{
+        text-decoration: none;
+        list-style: none;
+        padding: 0px;
+        
+        li{
+          background-color: #ddd;
+          padding: 10px 0px;
+        padding-left: 10px;
+        margin-bottom: 5px;
+          button{
+            display: none;
+            float: right;
+            padding: 10px;
+            line-height: 1;
+            position: relative;
+            top: -6px;
+            right: 5px;
+            transition: all 0.25 ease;
+            &.show{
+              display: block;
+              transition: all 0.25 ease;
+            }
+          }
+        }
+      }
+      .minus{
+        border-left: 4px solid rgb(233, 56, 56);
+      }
+      .plus{
+        border-left:4px solid rgb(11, 231, 158);
+      }
+    }
+    .add-transaction{
+      background-color: #f8f8f8;
+      padding: 15px 15px;
+      .form-group{
+        label{
+          font-weight: 500;
+        }
+        margin-top:10px;
+        line-height: 1.5;
+        .form-control{
+          margin-bottom: 15px;}
+          button{
+            text-align: right;
+          }
+      }
+  
+    }
+  }
+}
