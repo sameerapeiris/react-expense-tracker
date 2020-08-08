@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState ,useContext } from "react";
+import { GlobalContext } from "../context/GlobalState";
 
 const TransactionUI = (props) => {
+
+    const {deleteTransaction} = useContext(GlobalContext)
+
   const [closes, setClose] = useState("");
-  const sign = props.transaction.amount > 0 ? "-" : "+";
+  const sign = props.transaction.amount < 0 ? "-" : "+";
 
   const onMouseOver = (e) => {
     setClose("show");
@@ -10,6 +14,9 @@ const TransactionUI = (props) => {
   const onMouseLeave = (e) => {
     setClose(!closes);
   };
+  const transactionDelete = () => {
+    deleteTransaction(props.transaction.id)
+  }
   return (
     <React.Fragment>
       <li
@@ -21,7 +28,7 @@ const TransactionUI = (props) => {
         <span>
           {sign} ${Math.abs(props.transaction.amount)}
         </span>{" "}
-        <button className={`btn btn-danger delete-btn ${closes}`}>X</button>
+        <button onClick={transactionDelete} className={`btn btn-danger delete-btn ${closes}`}>X</button>
       </li>
     </React.Fragment>
   );
