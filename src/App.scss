@@ -36,14 +36,26 @@ body{
         padding-left: 10px;
         margin-bottom: 5px;
           button{
+            display: none;
             float: right;
             padding: 10px;
             line-height: 1;
             position: relative;
             top: -6px;
             right: 5px;
+            transition: all 0.25 ease;
+            &.show{
+              display: block;
+              transition: all 0.25 ease;
+            }
           }
         }
+      }
+      .minus{
+        border-left: 4px solid rgb(233, 56, 56);
+      }
+      .plus{
+        border-left:4px solid rgb(11, 231, 158);
       }
     }
     .add-transaction{
